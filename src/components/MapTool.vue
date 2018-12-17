@@ -22,7 +22,7 @@ export default {
     data: () => ({
         accessToken: 'pk.eyJ1IjoicmxlbWJvIiwiYSI6ImNqcG9kYmpkdjA3OXAzeHJ0YXpyY3F3amEifQ.bRtN1Fg_KAVXnhRspshrpA',
         mapStyle: 'mapbox://styles/mapbox/streets-v10',
-        zoom: 13
+        zoom: 13,
     }),
     computed: {
         ...mapGetters({
