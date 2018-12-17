@@ -1,23 +1,29 @@
 <template>
-    <mgl-map
-        id="map"
-        :accessToken="accessToken"
-        :mapStyle.sync="mapStyle"
-        :center="coordinates"
-        :zoom="zoom">
-        <mgl-marker :coordinates="coordinates" color="blue"></mgl-marker>
-    </mgl-map>
-    
+    <Mapbox
+        :access-token="accessToken"
+        :map-options="mapOptions()"
+        :geolocate-control="{
+            show: true,
+            position: 'top-right'
+        }"
+        :scale-control="{
+            show: true,
+            position: 'top-left'
+        }"
+        :fullscreen-control="{
+            show: true,
+            position: 'top-left'
+        }">
+    </Mapbox>
 </template>
 
 <script>
-import { MglMap, MglMarker } from 'vue-mapbox'
 import { mapGetters } from 'vuex'
+import Mapbox from 'mapbox-gl-vue';
 
 export default {
     components: {
-        MglMap,
-        MglMarker
+        Mapbox,
     },
     data: () => ({
         accessToken: 'pk.eyJ1IjoicmxlbWJvIiwiYSI6ImNqcG9kYmpkdjA3OXAzeHJ0YXpyY3F3amEifQ.bRtN1Fg_KAVXnhRspshrpA',
@@ -29,18 +35,27 @@ export default {
             coordinates: 'restaurants/coordRestaurantSelected',
         }),
     },
+    methods: {
+        mapOptions() {
+            return {
+                style: this.mapStyle,
+                center: this.coordinates,
+                zoom: this.zoom,
+            }  
+        }
+    },
 }
 </script>
 
 <style>
 #map {
-    height: 400px;
-    width: 100%;
+    height: 450px;
+    /* width: 100%; */
     top:0; 
     bottom:0;
 }
 
-.mapboxgl-canvas {
-    position: initial !important; 
+canvas.mapboxgl-canvas {
+    width: 100% !important;
 }
 </style>

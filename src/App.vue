@@ -4,16 +4,22 @@
             <Navigation></Navigation>
             <router-view></router-view>
         </el-main>
+        <UpdateRestaurantModal></UpdateRestaurantModal>
+        <RestaurantModal></RestaurantModal>
     </div>
 </template>
 
 <script>
 import Navigation from './containers/Navigation'
+import UpdateRestaurantModal from './containers/Restaurants/UpdateRestaurantModal';
+import RestaurantModal from './containers/Restaurants/RestaurantModal';
 
 export default {
     name: 'app',
     components: {
         Navigation,
+        UpdateRestaurantModal,
+        RestaurantModal,
     }
 }
 </script>

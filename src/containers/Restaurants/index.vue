@@ -57,8 +57,6 @@
                     </el-table>
                 </template>
             </el-row>
-            <UpdateRestaurantModal></UpdateRestaurantModal>
-            <RestaurantModal></RestaurantModal>
         </el-row>
 	</div>
 </template>
@@ -67,8 +65,6 @@
 import { mapState, mapActions } from 'vuex'
 import FindRestaurant from './FindRestaurant';
 import ChangePage from './ChangePage';
-import UpdateRestaurantModal from './UpdateRestaurantModal';
-import RestaurantModal from './RestaurantModal';
 
 export default {
     name: 'Restaurants',
@@ -84,8 +80,6 @@ export default {
     components: {
         FindRestaurant,
         ChangePage,
-        UpdateRestaurantModal,
-        RestaurantModal,
     },
     mounted() {
         const { page, pageSize } = this;

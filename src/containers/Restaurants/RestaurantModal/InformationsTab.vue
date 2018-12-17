@@ -40,8 +40,8 @@ export default {
 </script>
 
 <style>
-#imageRestaurant {
+/* #imageRestaurant {
     max-width: 400px;
     max-height: 400px;
-}
+} */
 </style>
